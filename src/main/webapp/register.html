@@ -1,0 +1,30 @@
+<html lang="zh-CH">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>JSP - Hello World</title>
+    <script type="text/javascript">
+        function _change() {
+            var imgEle = document.getElementById("vCode");
+            imgEle.src = "VerifyCodeServlet?" + new Date().getTime();
+        }
+    </script>
+</head>
+
+<body>
+    <form action="RegisterServlet" method="post">
+        用户名：<label>
+            <input type="text" name="username" />
+        </label><br />
+        验证码：<label>
+            <input type="text" name="code" size="3" />
+        </label>
+        <img id="vCode" src="VerifyCodeServlet" />
+        <a href="javascript:_change()">看不清，换一张</a>
+        <br />
+        <input type="submit" value="Submit" />
+    </form>
+</body>
+
+</html>
